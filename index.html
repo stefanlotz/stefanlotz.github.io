@@ -105,7 +105,7 @@
         <ul class="posts">
             <li>
                 <div>
-                    <a href="#srb-spectra"><em>Foundational models for radio spectra</em></a>
+                    <a href="#SRBs"><em>Foundational models for radio spectra</em></a>
                     <br>
                    &nbsp;&nbsp;MEng project, MUST Deep Learning, NWU
                 </div>
@@ -113,7 +113,7 @@
             </li>
             <li>
                 <div>
-                    <a href="#kan-it-do"><em>KAN it do space physics?</em></a>
+                    <a href="#KANs"><em>KAN it do space physics?</em></a>
                     <br>
                     &nbsp;&nbsp;MEng project, MUST Deep Learning, NWU
                 </div>
@@ -122,14 +122,14 @@
         </ul>
       </section>
 
-      <section class="view" id="kan-it-do"  data-section="research" hidden>
+      <section class="view" id="KANs"  data-section="research" hidden>
           <h2 class="view-title">KAN it do space physics?</h2>
 
           Use Kolmogorov-Arnold Networks to discover solar wind-geomagnetic field coupling for space weather prediction.
 
       </section>
 
-      <section class="view" id="srb-spectra"  data-section="research" hidden>
+      <section class="view" id="SRBs"  data-section="research" hidden>
           <h2 class="view-title">Foundational models for radio spectra</h2>
         <p>
             Build foundational vision model for the identification and characterisation of solar radio bursts and other natural radio spectra.
@@ -167,7 +167,7 @@
             else a.removeAttribute('aria-current');
           }
         });
-        document.title = 's8z' + (view.dataset.title || (' - ' + name === 'about' ? '' : name.charAt(0).toUpperCase() + name.slice(1)));
+        document.title = 's8z' + (view.dataset.title || (name === 'about' ? '' : ' - ' + name.charAt(0).toUpperCase() + name.slice(1)));
       }
 
       links.forEach(function (a) {
