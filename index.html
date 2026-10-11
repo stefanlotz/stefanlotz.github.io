@@ -109,24 +109,37 @@
         <ul class="posts">
             <li>
                 <div>
-                    <strong>Foundational models for radio spectra</strong>
+                    <a href="#srb-spectra"><em>Foundational models for radio spectra</em></a>
                     <br>
-                    <em>Build foundational vision model for the identification and characterisation
-                        of solar radio bursts and other natural radio spectra</em>
-                    <br>MEng project, MUST Deep Learning, NWU
+                   &nbsp;&nbsp;MEng project, MUST Deep Learning, NWU
                 </div>
-                    <span class="date">2026 &ndash; 2027</span>
+                <span class="date">2026 &ndash; 2027</span>
             </li>
             <li>
                 <div>
-                    <strong>KAN it do space physics?</strong><br>
-                    <em>Use Kolmogorov-Arnold Networks to discover solar wind-geomagnetic field coupling
-                        for space weather prediction</em>
-                    <br>MEng project, MUST Deep Learning, NWU
+                    <a href="#kan-it-do"><em>KAN it do space physics?</em></a>
+                    <br>
+                    &nbsp;&nbsp;MEng project, MUST Deep Learning, NWU
                 </div>
                     <span class="date">2025 &ndash; 2026</span>
             </li>
         </ul>
+      </section>
+
+      <section class="view" id="kan-it-do"  data-section="research" hidden>
+          <h2 class="view-title">KAN it do space physics?</h2>
+
+          Use Kolmogorov-Arnold Networks to discover solar wind-geomagnetic field coupling for space weather prediction.
+
+      </section>
+
+      <section class="view" id="srb-spectra"  data-section="research" hidden>
+          <h2 class="view-title">Foundational models for radio spectra</h2>
+        <p>
+            Build foundational vision model for the identification and characterisation of solar radio bursts and other natural radio spectra.
+        </p>
+
+
       </section>
 
       <footer class="footer">
@@ -143,16 +156,22 @@
       var links = document.querySelectorAll('[data-view]');
       var names = Array.prototype.map.call(views, function (v) { return v.id; });
 
-      function show(name) {
-        if (names.indexOf(name) === -1) name = 'about';
+    function show(name) {
+        var view = document.getElementById(name);
+        if (!view || !view.classList.contains('view')) {
+          name = 'about';
+          view = document.getElementById('about');
+        }
+        var section = view.dataset.section || name;   // which menu item to light up
+
         views.forEach(function (v) { v.hidden = (v.id !== name); });
         links.forEach(function (a) {
           if (a.closest('.nav')) {
-            if (a.dataset.view === name) a.setAttribute('aria-current', 'page');
+            if (a.dataset.view === section) a.setAttribute('aria-current', 'page');
             else a.removeAttribute('aria-current');
           }
         });
-        document.title = (name === 'about' ? '' : name.charAt(0).toUpperCase() + name.slice(1) + ' - ') + 'Stefan Lotz';
+        document.title = (view.dataset.title || (name === 'about' ? '' : name.charAt(0).toUpperCase() + name.slice(1) + ' - ')) + 'John Smith';
       }
 
       links.forEach(function (a) {
